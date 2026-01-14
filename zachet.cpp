@@ -4,35 +4,26 @@ using namespace std;
 
 int main() {
     int N;
-    cout << "Введите размер массива N: ";
+    // Считываем размер массива
     cin >> N;
-
-    // Проверка ограничения
-    if (N < 1 || N > 100) {
-        cout << "Неверный размер массива" << endl;
-        return 1;
-    }
-
     vector<int> a(N);
-    cout << "Введите " << N << " целых чисел массива: ";
+    // Считываем элементы массива
     for (int i = 0; i < N; ++i) {
         cin >> a[i];
     }
-
     int x;
-    cout << "Введите искомое число x: ";
+    // Считываем искомое число
     cin >> x;
 
-    // Линейный поиск
-    int index = -1;
+    int lastIndex = -1;
+    // Проходим по всем элементам и обновляем индекс при совпадении
     for (int i = 0; i < N; ++i) {
         if (a[i] == x) {
-            index = i;
-            break;
+            lastIndex = i;
         }
     }
 
-    // Вывод результата
-    cout << index << endl;
+    // Выводим результат
+    cout << lastIndex << endl;
     return 0;
 }
